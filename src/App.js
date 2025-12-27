@@ -1,0 +1,45 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import Home from './pages/Home/Home';
+import Login from './pages/Auth/Login';
+import Register from './pages/Auth/Register';
+import LawyerSearch from './pages/LawyerSearch/LawyerSearch';
+import AppointmentBooking from './pages/AppointmentBooking/AppointmentBooking';
+import ClientDashboard from './pages/Dashboard/ClientDashboard';
+import LawyerDashboard from './pages/Dashboard/LawyerDashboard';
+import DocumentUpload from './pages/DocumentUpload/DocumentUpload';
+import Chat from './pages/Chat/Chat';
+import Contact from './pages/Contact/Contact';
+import './App.css';
+
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <Header />
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/lawyers" element={<LawyerSearch />} />
+            <Route path="/book-appointment/:lawyerId?" element={<AppointmentBooking />} />
+            <Route path="/client/dashboard" element={<ClientDashboard />} />
+            <Route path="/lawyer/dashboard" element={<LawyerDashboard />} />
+            <Route path="/documents/upload" element={<DocumentUpload />} />
+            <Route path="/chat/:userId?" element={<Chat />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
+  );
+}
+
+export default App;
+
+

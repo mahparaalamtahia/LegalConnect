@@ -1,0 +1,33 @@
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.star {
+  color: #f39c12;
+  font-size: 1.2rem;
+}
+
+.starEmpty {
+  color: #ddd;
+  font-size: 1.2rem;
+}
+
+.ratingText {
+  margin-left: 0.5rem;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+.small .star,
+.small .starEmpty {
+  font-size: 0.9rem;
+}
+
+.large .star,
+.large .starEmpty {
+  font-size: 1.5rem;
+}
+
+
